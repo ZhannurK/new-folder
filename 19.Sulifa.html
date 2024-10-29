@@ -36,7 +36,6 @@
     </div>
 
     <div class="result" id="result">Make your choice!</div>
-    <button class="reset-btn" onclick="resetGame()">Reset</button>
 
     <script>
         function playGame(playerChoice) {
@@ -57,9 +56,6 @@
             document.getElementById('result').textContent = `You chose ${playerChoice}. Bot chose ${botChoice}. ${result}`;
         }
 
-        function resetGame() {
-            document.getElementById('result').textContent = "Make your choice!";
-        }
     </script>
 
 </body>
