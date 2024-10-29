@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Non-Repeated Character</title>
+</head>
+<body>
+
+    <label for="InputString">Enter a String</label>
+    <input type="text" id="InputString" placeholder="Enter your String"> 
+    <button onclick="findNonRepeatedChar()">Find Character</button>
+
+    <p id="result"></p>
+    
+    <script> 
+        const NonRepeatedChar = (str) => 
+            str.split('').find((item, index, arr) => arr.filter(arrItem => arrItem === item).length === 1);
+
+        function findNonRepeatedChar() {
+            const input = document.getElementById("InputString").value;
+            const result = NonRepeatedChar(input);
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+
+</body>
+</html>

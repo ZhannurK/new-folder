@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop</title>
+  
+  <style>
+    .container { 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        gap: 20px; 
+    }
+    .box { 
+        width: 150px; 
+        height: 150px; 
+        border: 2px dashed #424242; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+    }
+    .item { 
+        width: 100px; 
+        height: 100px; 
+        background-color: #4CAF50; 
+        color: white; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        cursor: grab; }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <div id="left" class="box">
+      <div class="item" draggable="true">Item</div>
+    </div>
+    <div id="right" class="box"></div>
+  </div>
+
+  <script>
+    let item = document.querySelector(".item");
+    let boxes = document.querySelectorAll(".box");
+
+    boxes.forEach(box => {
+    box.ondragover = (event) => 
+    event.preventDefault();
+    
+    box.ondrop = (event) => 
+    box.appendChild(item);
+    });
+  </script>
+
+</body>
+</html>

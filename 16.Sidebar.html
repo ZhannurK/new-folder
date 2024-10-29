@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Push Sidebar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            transition: 0.3s;
+            padding: 20px 10px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+        }
+        .main-content {
+            padding: 20px;
+            transition: margin-left 0.3s;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <span class="close-btn" onclick="toggleSidebar()"> x </span>
+        <h2>Sidebar</h2>
+        <a>Home</a>
+        <a>About</a>
+        <a>Services</a>
+        <a>Contact</a>
+    </div>
+
+    <div id="main-content" class="main-content">
+        <button onclick="toggleSidebar()">= Open Sidebar</button>
+        <h1>Main Content</h1>
+        <p>Alisher Amirov is the best teacher !</p>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const mainContent = document.getElementById("main-content");
+
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+                mainContent.style.marginLeft = "0";
+            } 
+            else {
+                sidebar.style.left = "0px";
+                mainContent.style.marginLeft = "250px";
+            }
+        }
+    </script>
+
+</body>
+</html>

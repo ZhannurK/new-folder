@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Highlighting</title>
+</head>
+<body>
+
+    <p id="text">
+        HAHAHAHAH ahaha ahaha AHAHAHAHA AHAHA aha a ha AH AHA hahahahahahaha
+    </p>
+
+<script>
+    const paragraph = document.querySelector("#text");
+
+    const words = paragraph.innerText.split(" ");
+    
+    const styledWords = words.map(word => {
+        if (word.length > 7) {
+            return `<span style="background-color: blue">${word}</span>`;
+        } else if (word.length < 3) {
+            return `<strong>${word}</strong>`;
+        } else {
+            return word;
+        }
+    });
+    
+    paragraph.innerHTML = styledWords.join(" ");
+</script>
+
+</body>
+</html>

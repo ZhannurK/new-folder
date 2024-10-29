@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace Characters</title>
+</head>
+<body>
+    <p id="text">Hello! How are you doing? Are you excited?</p>
+
+    <script>
+        function replaceMarks() {
+            const paragraph = document.getElementById("text");
+            paragraph.innerHTML = paragraph.innerHTML.replace(/\?/g, "*").replace(/!/g, "@");
+        }
+
+        replaceMarks();
+    </script>
+    
+</body>
+</html>

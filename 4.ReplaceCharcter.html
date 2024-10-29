@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="inputText" placeholder="Enter text">
+    <button onclick="displayResult()">Submit</button>
+    <p id="result"></p>
+    
+    <script>
+        //String.fromCodeCode 
+        //charCodeAt
+
+        const replaceChar = (str) => 
+            str.split('').map(char => String.fromCharCode(char.charCodeAt(0) + 1)).join('');
+        
+        const displayResult = () => {
+            const inputText = document.getElementById("inputText").value;
+            const newText = replaceChar(inputText);
+            document.getElementById("result").innerText = newText;
+        };
+    </script>
+
+</body>
+</html>

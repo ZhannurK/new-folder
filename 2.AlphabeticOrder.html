@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetical Order</title>
+</head>
+<body>
+
+    <p id="result"> </p>
+
+    <script>
+        function AbcSort() {
+            let sentence = window.prompt("Enter a sentence:");
+
+            let words = sentence.split(" ");
+
+            let sortWords = words.map(word => {
+                return word.toLowerCase().split("").sort().join("");
+            });
+
+            document.getElementById("result").innerHTML = sortWords.join(" ");
+        }
+
+        AbcSort();
+    </script>
+
+</body>
+</html>

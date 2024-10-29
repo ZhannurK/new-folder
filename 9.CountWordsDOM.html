@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+</head>
+<body>
+    <h1>Word Counter</h1>
+    <p id="paragraph">I remembered you was conflicted
+        Misusing your influence, sometimes I did the same
+        Abusing my power full of resentment
+        Resentment that turned into a deep depression
+        Found myself screaming in the hotel room
+        I didn't wanna self destruct, the evils of Lucy was all around me
+        So I went runnin' for answers.</p>
+    <button onclick="countWords()">Count Words</button>
+
+    <script>
+        function countWords() {
+            const paragraph = document.getElementById("paragraph");
+            const wordCount = paragraph.innerText.split(' ').length;
+            const wordCountElem = document.createElement('p');
+            wordCountElem.innerText = `${wordCount} words`;
+            document.body.insertBefore(wordCountElem, paragraph);
+        }
+    </script>
+</body>
+</html>

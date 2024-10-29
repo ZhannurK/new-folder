@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest and Shortest Word Finder</title>
+</head>
+<body>
+
+    <button onclick="LongestShortest()">Enter Words</button>
+    <p id="result"></p>
+
+    <script>
+        function LongestShortest() {
+            let word1 = window.prompt("Enter the first word:");
+            let word2 = window.prompt("Enter the second word:");
+            let word3 = window.prompt("Enter the third word:");
+
+            let words = [word1, word2, word3];
+
+            let longest = words[0];
+            let shortest = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (words[i].length > longest.length) {
+                    longest = words[i];
+                }
+                if (words[i].length < shortest.length) {
+                    shortest = words[i];
+                }
+            }
+
+            document.getElementById("result").innerHTML = 
+                `The longest is: ${longest}<br>The shortest is: ${shortest}`;
+        }
+    </script>
+
+</body>
+</html>

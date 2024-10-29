@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nearest and Farthest to 100 </title>
+</head>
+<body>
+
+    <p id="output"> </p>
+
+    <script>
+        function NearestTo100() {
+            let a = parseInt(window.prompt("Enter the first number: "));
+            let b = parseInt(window.prompt("Enter the second number: "));
+            let c = parseInt(window.prompt("Enter the third number: "));
+
+            let values = [a, b, c];
+
+            let nearest = values[0];
+            let furthest = values[0];
+            let nearDis = Math.abs(values[0] - 100);
+            let furtherDis = Math.abs(values[0] - 100);
+
+            for (let i = 1; i < values.length; i++) {
+                let distance = Math.abs(values[i] - 100);
+
+                if (distance < nearDis) {
+                    nearDis = distance;
+                    nearest = values[i];
+                }
+
+                if (distance > furtherDis) {
+                    furtherDis = distance;
+                    furthest = values[i];
+                }
+            }
+
+            document.getElementById('output').innerHTML = `Nearest number: ${nearest} <br> Furthest number: ${furthest}`;  
+        }
+
+        NearestTo100();
+    </script>
+
+</body>
+</html>

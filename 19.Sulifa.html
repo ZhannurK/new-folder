@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors Game</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .choices button, .reset-btn {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Rock, Paper, Scissors</h1>
+    
+    <div class="choices">
+        <button onclick="playGame('rock')">Rock</button>
+        <button onclick="playGame('paper')">Paper</button>
+        <button onclick="playGame('scissors')">Scissors</button>
+    </div>
+
+    <div class="result" id="result">Make your choice!</div>
+    <button class="reset-btn" onclick="resetGame()">Reset</button>
+
+    <script>
+        function playGame(playerChoice) {
+            let result;
+            const choices = ['rock', 'paper', 'scissors'];
+            const botChoice = choices[Math.floor(Math.random() * choices.length)];
+
+            if (playerChoice === botChoice) {
+                result = "It's a tie!";
+            } 
+            else if ((playerChoice === 'rock' && botChoice === 'scissors') || (playerChoice === 'paper' && botChoice === 'rock') || (playerChoice === 'scissors' && botChoice === 'paper')) {
+                result = "You win! " + playerChoice + " beats " + botChoice + ".";
+            } 
+            else {
+                result = "You lose! " + botChoice + " beats " + playerChoice + ".";
+            }
+
+            document.getElementById('result').textContent = `You chose ${playerChoice}. Bot chose ${botChoice}. ${result}`;
+        }
+
+        function resetGame() {
+            document.getElementById('result').textContent = "Make your choice!";
+        }
+    </script>
+
+</body>
+</html>

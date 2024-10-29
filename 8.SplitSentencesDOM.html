@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Sentences on New Lines</title>
+</head>
+<body>
+    <h2>Enter a Paragraph</h2>
+    <textarea id="inputText" rows="4" cols="50">I remembered you was conflicted. Misusing your influence, sometimes I did the same. Abusing my power full of resentment. Resentment that turned into a deep depression.</textarea><br><br>
+    <button onclick="splitSentences()">Split Sentences</button>
+    
+    <h2>Output:</h2>
+    <div id="outputText"></div>
+
+    <script>
+        function splitSentences() {
+            const paragraph = document.getElementById("inputText").value;
+
+            const formattedParagraph = paragraph
+                .split(/[.!?]\s+/).join('</p><p>');
+
+            document.getElementById("outputText").innerHTML = `<p>${formattedParagraph}</p>`;
+        }
+    </script>
+    
+</body>
+</html>

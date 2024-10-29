@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highlight Words</title>
+</head>
+<body>
+  <p id="result">
+    Amazing apples await anyone admiring art and architecture, as ample ancient artifacts appear around. 
+    Harmony, sunny, bravery, honesty, family, plenty, discovery, story, daily, beauty, glory, victory.
+  </p>
+
+  <script>
+    function highlightWords() {
+      const paragraph = document.getElementById("result");
+      paragraph.innerHTML = paragraph.innerHTML.split(" ").map(word => {
+        const cleanWord = word.replace(/[^a-zA-Z]/g, "").toLowerCase();
+        
+        if (cleanWord.startsWith("a") && cleanWord.endsWith("y")) {
+          return `<i><u>${word}</u></i>`;
+        } 
+        else if (cleanWord.startsWith("a")) {
+          return `<i>${word}</i>`;
+        } 
+        else if (cleanWord.endsWith("y")) {
+          return `<u>${word}</u>`;
+        }
+        return word;
+      }).join(" ");
+    }
+
+    highlightWords();
+  </script>
+
+</body>
+</html>
