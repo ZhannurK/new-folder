@@ -19,9 +19,11 @@
     const styledWords = words.map(word => {
         if (word.length > 7) {
             return `<span style="background-color: blue">${word}</span>`;
-        } else if (word.length < 3) {
+        } 
+        else if (word.length < 3) {
             return `<strong>${word}</strong>`;
-        } else {
+        } 
+        else {
             return word;
         }
     });
